@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>行千里致广大</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="fonts/iconfont.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="w header">
+            <nav class="nav">
+                <a href="index.html" class="logo">
+                    <img src="images/logo.png" alt="">
+                </a>
+                <ul class="nav-meau">
+                    <li><a href="index.html" class="active">首页</a></li>
+                    <li><a href="culture.html" >巴渝文化</a></li>
+                    <li><a href="video.html" >视频</a></li>
+                </ul>
+            </nav>
+             <ul class="user">
+                <div class="topclick">
+                <div class="ltbox1">
+                    <p>ABOUT</p>
+                </div>
+                    <ul class="ltbox2" style="position:absolute;z-index: 10">
+					   <li><a href="#" >登录</a></li>
+                       <li><a href="#" >注册</a></li>
+                       <li><a href="about.html" >联系我</a></li>
+                    </ul>
+					</div>
+			</ul>
+        </div>
+    </header>
+
+    <div class="header-bg">
+        <img src="images/Cqmap.png" alt="">
+        <div class="title">
+            视频
+        </div>
+    </div>
+    <div class="content w py-3 contentVideo">
+        <div class="content-l">
+            <h4 class="mb-3">重庆城市宣传片</h4>
+            <div class="row">
+                <div class="col-4">
+                    <div class="card item" data-src="">
+                        <div class="pic">
+                            <img class="card-img-top" src="images/VideoCover1.jpg" alt="">
+                        </div>
+                        <div class="card-body p-2">
+                            <h5 class="card-title">重庆大礼堂</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card item" data-src="">
+                        <div class="pic">
+                            <img class="card-img-top" src="images/VideoCover2.jpg" alt="">
+                        </div>
+                        <div class="card-body p-2">
+                            <h5 class="card-title">千厮门大桥</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card item" data-src="">
+                        <div class="pic">
+                            <img class="card-img-top" src="images/VideoCover3.jpg" alt="">
+                        </div>
+                        <div class="card-body p-2">
+                            <h5 class="card-title">赛博重庆</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card item" data-src="">
+                        <div class="pic">
+                            <img class="card-img-top" src="images/VideoCover4.jpg" alt="">
+                        </div>
+                        <div class="card-body p-2">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card item" data-src="">
+                        <div class="pic">
+                            <img class="card-img-top" src="images/Hyd.png" alt="">
+                        </div>
+                        <div class="card-body p-2">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card item" data-src="">
+                        <div class="pic">
+                            <img class="card-img-top" src="images/Ciqikou.jpg" alt="">
+                        </div>
+                        <div class="card-body p-2">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fixedVideo">
+        <div class="videoBox">
+            <video src="" controls></video>
+            <button class="btn-close">X</button>
+        </div>
+    </div>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        var videoSrc = [
+            'images/1.mp4',
+            'images/2.mp4',
+            'images/3.mp4',
+            'images/4.mp4'
+        ]
+        $.each(videoSrc, (index, item) => {
+            $('.contentVideo .item').eq(index).attr('data-src', item)
+        })
+
+        $('.btn-close').on('click', function () {
+            $('.fixedVideo').fadeOut()
+        })
+
+        $('.contentVideo .item').on('click', function () {
+            $('.fixedVideo').fadeIn()
+            $('.fixedVideo video').attr('src', $(this).attr('data-src'))
+        })
+    </script>
+</body>
+
+</html>
